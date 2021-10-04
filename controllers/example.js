@@ -2,10 +2,10 @@ const Example = require('../models/Example')
 
 exports.getExamples = async function (req, res, next) {
 	try {
-		const examples = await Example.find()
+		// const examples = await Example.find()
 		res.send({
 			success: true,
-			data: examples
+			data: {}
 		})
 	} catch (error) {
 		next(error)

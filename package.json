@@ -4,13 +4,17 @@
   "description": "backend template for nodejs projects",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "nodemon server.js",
+    "bs": "browser-sync start --proxy localhost:5000 --files dist"
   },
   "author": "skarmind",
   "license": "ISC",
   "dependencies": {
     "colors": "^1.4.0",
+    "cors": "^2.8.5",
     "dotenv": "^9.0.2",
+    "echarts": "^5.2.1",
+    "exceljs": "^4.3.0",
     "express": "^4.17.1",
     "mongoose": "^5.12.8",
     "morgan": "^1.10.0",

@@ -1,23 +1,25 @@
 const express = require('express')
 const path = require('path')
+const cors = require('cors')
 const morgan = require('morgan')
-const connectDB = require('./config/db.js')
+// const connectDB = require('./config/db.js')
 
 // configs
 require('colors')
 require('dotenv').config()
 
 //connection to database
-connectDB()
+// connectDB()
 
 // Routers
 
-const example = require('./routers/example.js')
+const datakrusn = require('./routers/datakrusn.js')
 
 const PORT = process.env.PORT || 7000
 
 const app = express()
 
+app.use(cors())
 app.use(express.static('dist'));
 app.use(express.json())
 app.use(express.urlencoded({
@@ -28,7 +30,7 @@ app.use(morgan('dev'))
 
 // use Routers
 
-app.use('/api/example', example)
+app.use('/api/datakrusn', datakrusn)
 
 app.use(function(err, req, res, next) {
   res.status(500).send({
